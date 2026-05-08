@@ -27,23 +27,18 @@ The code below allows anyone interested to score their own tractogram.
  
 - **Scoring data**: <a href="https://scil.usherbrooke.ca/ismrm2015/scoring_data_Renauld2023.zip"> here </a>. It contains the bundles, the bundle masks and the configuration files to be used with the mentionned script. These ground truth bundles were modified compared to the initial version (Maier-Hein et al., 2017), in order to have bundles that allowed creation of ROIs. Modifications are detailed in Renauld et al., 2023. In short, looping and broken streamlines were discarded, and the CSF / FPT / POPT were merged as one bundle called Brainstem Projection System (BPS). This scoring technique thus offers scores for 21 bundles instead of 25.
 
-- **Scripts**: The process is divided into the following steps: 1) Segmentation of the bundles and sub-bundles. 2) Merging back sub-bundles of the CC and ICP. 3) Scoring the final bundles. Results are then stored in the results.json file. The python scripts used are from the <a href="https://github.com/scilus/scilpy"> scilpy</a> library (Renauld et al., 2026). The original scilpy version at the time of publication was 1.5.0, but you can use any scilpy version:
+- **Scripts**: The process is divided into the following steps: 1) Segmentation of the bundles and sub-bundles. 2) Merging back sub-bundles of the CC and ICP. 3) Scoring the final bundles. Results are then stored in the results.json file. The python scripts used are from the <a href="https://github.com/scilus/scilpy"> scilpy</a> library <a href="https://apertureneuro.org/article/154022-tractography-analysis-with-the-scilpy-toolbox"> (Renauld et al., 2026)</a>. The original scilpy version at the time of publication was 1.5.0, but you can use any scilpy version:
 
-  - scilpy version 1.5.0 and more: Here is the <a href="/code_snippets/scil_score_ismrm_Renauld2023.sh"> link to the bash script </a>.  These versions use python 3.7 and can be installed by downloading the release <a href="https://github.com/scilus/scilpy/releases"> here </a> and using "`pip install .`" from inside the folder. 
+  - scilpy version 1.5.0 and more: Here is the <a href="/code_snippets/scil_score_ismrm_Renauld2023.sh"> link to the bash script and config files </a>.  This version use python 3.7 and can be installed by downloading the release <a href="https://github.com/scilus/scilpy/releases"> here </a> and using "`pip install .`" from inside the folder. 
 
   - scilpy version 2.0.0 and more: Many versions after 2.0.0 are now directly available for installation through <a href="https://pypi.org/project/scilpy/"> Pipy </a> (using `pip install scilpy`) on python 3.10.
   
   - scilpy version 2.2.0 and more: After version 2.2.0, the '.py' suffix of all scilpy scripts were dropped. You may delete them in the bash script or download the updated version <a href="/code_snippets/scil_score_ismrm_Renauld2023_scilpy2.2.0.sh"> here </a>.
 
-  - version 2.2.2 and more: After version 2.2.2, the config_file for tractometry changed. You may use <a href="/code_snippets/config_file_tractometry_scilpy2.2.2.sh"> this one </a>. instead.
+  - version 2.2.2 and more: After version 2.2.2, the config_file for tractometry changed. You may use <a href="/code_snippets/config_file_tractometry_scilpy2.2.2.sh"> this one </a> instead.
 
   - Later versions: For help adapting these lines to later versions, please contact us.
 
-<a href="/code_snippets/scil_score_ismrm_Renauld2023.sh">
-    <figure>
-        <img src="/code_snippets/ismrm_2022_code.png" width="30%" style="display:block; margin-left: auto; margin-right: auto;">
-    </figure>
-</a>
 
 
 #### 2) 2015 version: Recobundles-based segmentation</b><br><br>
